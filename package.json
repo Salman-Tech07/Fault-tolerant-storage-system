@@ -7,13 +7,12 @@
     "node2": "node storageNode.js 3002 node2",
     "node3": "node storageNode.js 3003 node3",
     "coordinator": "node coordinator.js",
+    "start": "concurrently -n node1,node2,node3,coordinator \"npm run node1\" \"npm run node2\" \"npm run node3\" \"npm run coordinator\"",
     "start-all": "concurrently -n node1,node2,node3,coordinator -c green,cyan,magenta,yellow \"npm run node1\" \"npm run node2\" \"npm run node3\" \"npm run coordinator\""
   },
   "dependencies": {
     "axios": "^1.7.2",
+    "concurrently": "^8.2.2",
     "express": "^4.19.2"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
   }
 }
