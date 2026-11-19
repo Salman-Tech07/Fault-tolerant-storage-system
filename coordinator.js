@@ -13,8 +13,7 @@ const app = express();
 app.use(express.json({ limit: '50mb' }));
 app.use(express.static(path.join(__dirname, 'public'))); // dashboard yahi se serve hoga
 
-const PORT = 4000;
-
+const PORT = process.env.PORT || 4000;
 const NODES = [
   { id: 'node1', url: 'http://localhost:3001' },
   { id: 'node2', url: 'http://localhost:3002' },
